@@ -1,0 +1,33 @@
+<style>
+    #playBox {
+        position: relative;
+    }
+    .play{
+        position: absolute;
+        left:38%;
+        top: 34%;
+        padding:20px 25px;
+        -moz-border-radius: 35px;
+        -webkit-border-radius: 35px;
+        background-color: rgba(12,12,12,0.5);
+    }
+    .col img{
+        width:100%;
+    }
+</style>
+<ion-view view-title="{{playlist.title}}">
+  <ion-content>
+    <div class="row">
+        <div class="col" id="playBox">
+            <img src="{{playlist.pic}}" alt="">
+            <span id="play_controller" ng-class="{false: 'icon ion-play play', true: 'icon ion-pause play'}[pause]" ng-click=play()></span>
+            <audio ng-src="{{playlist.source}}" id="player"></audio>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            {{playlist.content}}
+        </div>
+    </div>
+  </ion-content>
+</ion-view>
